@@ -3,32 +3,35 @@
 </head>
 
 <body>
-{{> addRestaurantButton}}
-{{> restaurants}}
+  {{> addRestaurantButton}}
+  {{> restaurants}}
 </body>
 
 <template name="addRestaurantButton">
   <input type="button" value="+" />
 </template>
 
-<template name="addRestaurantModal">
-  <div class="modal">
-    <form>
-
-    </form>
-  </div>
-</template>
-
 <template name="restaurants">
   <div>
     {{#each restaurants}}
-    {{> restaurant}}
+      {{> restaurant}}
     {{/each}}
   </div>
 </template>
 
 <template name="restaurant">
   <div>
-    {{name}}
+    <span>{{name}}</span>
+    <div>
+      {{#each users}}
+        {{> user}}
+      {{/each}}
+    </div>
   </div>
+</template>
+
+<template name="user">
+  <span style="float: right">
+    {{name}}
+  </span>
 </template>
