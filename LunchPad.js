@@ -33,17 +33,6 @@ Users = new Meteor.Collection("users");
             });
         }
 
-        Template.addRestaurantButton.events({
-            'click input' : function () {
-                // template data, if any, is available in 'this'
-                Restaurants.insert({
-                    name: 'rrrrRRRRRRed Robin (yum)'
-                });
-
-                console.log('restaurant added.')
-            }
-        });
-
         Template.addToRestaurantButton.events({
             'click input': function() {
                 if (currentUser) {

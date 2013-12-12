@@ -2,8 +2,6 @@
 
 .panel {
     background-color: #fff;
-    border: 5px solid;
-    border-color: rgb(255, 181, 74);
     height: 34px;
     padding: 10px;
 }
