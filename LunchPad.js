@@ -78,6 +78,15 @@ Users = new Meteor.Collection("users");
                 }
             }
         });
+
+        Template.addRestaurantButton.events({
+            'click button.btn-primary': function (event) {
+                $('#addRestaurantForm').modal('show');
+                $('#addRestaurantForm').on('shown.bs.modal', function (event) {
+                    $('#restaurantName').focus();
+                });
+            }
+        });
     }
 
     if (Meteor.isServer) {
