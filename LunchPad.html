@@ -1,5 +1,6 @@
 <head>
   <title>LunchPad</title>
+  <link href="launchpad.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -8,7 +9,10 @@
 </body>
 
 <template name="addRestaurantButton">
-  <input type="button" value="+" />
+    <div class="panel">
+        <a href="#join_form" id="join_pop">Add Lunch Spot</a>
+    </div>
+    <input type="button" value="+" />
 </template>
 
 <template name="restaurants">
