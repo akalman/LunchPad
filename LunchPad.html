@@ -3,12 +3,22 @@
 </head>
 
 <body>
-  {{> addRestaurantButton}}
-  {{> restaurants}}
+{{> userInput}}
+{{> addRestaurantButton}}
+{{> restaurants}}
 </body>
 
+<template name="userInput">
+  <div>
+    Email
+    <input type="email" value="{{user}}" />
+  </div>
+</template>
+
 <template name="addRestaurantButton">
-  <input type="button" value="+" />
+  <div>
+    <input type="button" value="+ Add Restaurant" />
+  </div>
 </template>
 
 <template name="restaurants">
@@ -20,18 +30,25 @@
 </template>
 
 <template name="restaurant">
-  <div>
-    <span>{{name}}</span>
+  <div style="border: 1px solid black; padding: 5px 5px; margin: 2px;">
+    <div style="width: 100%">{{name}}</div>
     <div>
       {{#each users}}
         {{> user}}
       {{/each}}
     </div>
+    {{> addToRestaurantButton}}
+  </div>
+</template>
+
+<template name="addToRestaurantButton">
+  <div>
+    <input type="button" value="+ Add me" />
   </div>
 </template>
 
 <template name="user">
   <span style="float: right">
-    {{name}}
+    {{email}}
   </span>
 </template>
