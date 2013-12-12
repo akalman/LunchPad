@@ -4,34 +4,59 @@ Assignments = new Meteor.Collection("assignments");
 Users = new Meteor.Collection("users");
 
 (function() {
+    // Helper Data
+    function getUsersForRestaurant(restaurant) {
+        var assignments = Assignments.find({
+            restaurantId: restaurant._id
+        });
+
+        return Users.find({
+            _id: {$in: assignments.map(function(assignment) {
+                return assignment.userId;
+            })}
+        });
+    }
+
+    function getRestaurantForUsers(user) {
+        var assignments = Assignments.find({
+            userId: user._id
+        });
+
+        return Restaurants.find({
+            _id: {$in: assignments.map(function(assignment) {
+                return assignment.restaurantId;
+            })}
+        });
+    }
+
     var currentUser;
 
+
+    // UI Plugs
     if (Meteor.isClient) {
         Template.userInput.user = function() {
             return currentUser;
-        }
+        };
 
         Template.userInput.events({
             'change input': function(event) {
                 currentUser = event.target.value;
             }
-        })
+        });
 
         Template.restaurants.restaurants = function() {
-            return Restaurants.find({});
-        }
+            var restaurants = Restaurants.find({}, {
+                sort: []
+            }).fetch();
+
+            return _.sortBy(restaurants, function(restaurant) {
+                return -getUsersForRestaurant(restaurant).count();
+            });
+        };
 
         Template.restaurant.users = function() {
-            var assignments = Assignments.find({
-                restaurantId: this._id
-            });
-
-            return Users.find({
-                _id: {$in: assignments.map(function(assignment) {
-                    return assignment.userId;
-                })}
-            });
-        }
+            return getUsersForRestaurant(this);
+        };
 
         Template.addToRestaurantButton.events({
             'click input': function() {
@@ -52,7 +77,7 @@ Users = new Meteor.Collection("users");
                     });
                 }
             }
-        })
+        });
     }
 
     if (Meteor.isServer) {
