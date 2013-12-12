@@ -3,6 +3,7 @@ Template.addLunchSpotButtons.events({
         Restaurants.insert({
             name: $('#restaurantName').val()
         });
+        $('#addRestaurantForm').modal('hide');
         $('#restaurantName').val('');
     }
 });
