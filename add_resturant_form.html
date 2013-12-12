@@ -1,3 +1,6 @@
+<head>
+  <link href="add_resturant_form.css" rel="stylesheet" type="text/css" />
+</head>
 <body>
     <a href="#x" class="overlay" id="join_form"></a>
     <div class="popup">
@@ -9,8 +12,12 @@
             <input type="text" id="firstname" value="" />
         </div>
 
-        <input type="button" value="Add Lunch Spot" />
+        {{> add_lunch_spot}}
 
         <a class="close" href="#close"></a>
     </div>
 </body>
+
+<template name="add_lunch_spot">
+    <input type="button" value="Add Lunch Spot" />
+</template>
