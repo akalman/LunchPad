@@ -1,0 +1,60 @@
+<!--<head>-->
+  <!--<title>LunchPad</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--{{> addRestaurantButton}}-->
+<!--<div>-->
+  <!--{{#each players}}-->
+    <!--{{> restaurant}}-->
+  <!--{{/each}}-->
+<!--</div>-->
+<!--</body>-->
+
+<!--<template name="hello">-->
+  <!--<h1>Hello World!</h1>-->
+  <!--{{greeting}}-->
+  <!--<input type="button" value="Click" />-->
+<!--</template>-->
+
+<!--<template name="addRestaurantButton">-->
+  <!--<input type="button" value="+" />-->
+<!--</template>-->
+
+<!--<template name="addRestaurantModal">-->
+  <!--<div class="modal">-->
+    <!--<form>-->
+
+    <!--</form>-->
+  <!--</div>-->
+<!--</template>-->
+
+<!--<template name="restaurant">-->
+  <!--<div>-->
+    <!--{{name}}-->
+  <!--</div>-->
+<!--</template>-->
+<head>
+  <title>Leaderboard</title>
+</head>
+
+<body>
+<div id="outer">
+  {{> leaderboard}}
+</div>
+</body>
+
+<template name="leaderboard">
+
+  <div class="leaderboard">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="player">
+  <div class="player">
+    <span class="name">{{name}}</span>
+  </div>
+</template>
