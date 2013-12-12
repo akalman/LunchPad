@@ -31,12 +31,12 @@
 
 <template name="restaurant">
   <div style="border: 1px solid black; padding: 5px 5px; margin: 2px;">
-    <div style="width: 100%">{{name}}</div>
     <div>
       {{#each users}}
         {{> user}}
       {{/each}}
     </div>
+    <div style="width: 100%">{{name}}</div>
     {{> addToRestaurantButton}}
   </div>
 </template>
@@ -48,7 +48,5 @@
 </template>
 
 <template name="user">
-  <span style="float: right">
-    {{email}}
-  </span>
+  <img style="float: right" src="{{gravatarUrl}}" />
 </template>

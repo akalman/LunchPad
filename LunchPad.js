@@ -39,7 +39,10 @@ Users = new Meteor.Collection("users");
                     var user = Users.findOne({email: currentUser});
 
                     if (!user) {
-                        Users.insert({email: currentUser});
+                        Users.insert({
+                            email: currentUser,
+                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.md5(currentUser.toLowerCase()) + '?d=monsterid&s=40'
+                        });
                         user = Users.findOne({email: currentUser});
                     }
 
@@ -55,6 +58,6 @@ Users = new Meteor.Collection("users");
     if (Meteor.isServer) {
         Meteor.startup(function () {
             // code to run on server at startup
-        });
+    });
     }
 })();
