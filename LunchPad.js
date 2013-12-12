@@ -46,7 +46,6 @@ Users = new Meteor.Collection("users");
 
         Template.addToRestaurantButton.events({
             'click input': function() {
-                debugger;
                 if (currentUser) {
                     var user = Users.findOne({email: currentUser});
 
