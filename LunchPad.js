@@ -17,7 +17,7 @@ Users = new Meteor.Collection("users");
         });
     }
 
-    function getRestaurantForUsers(user) {
+    function getRestaurantsForUser(user) {
         var assignments = Assignments.find({
             userId: user._id
         });
@@ -66,7 +66,7 @@ Users = new Meteor.Collection("users");
                     if (!user) {
                         Users.insert({
                             email: currentUser,
-                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.md5(currentUser.toLowerCase()) + '?d=monsterid&s=40'
+                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(currentUser.toLowerCase()) + '?d=monsterid&s=40'
                         });
                         user = Users.findOne({email: currentUser});
                     }
@@ -89,6 +89,38 @@ Users = new Meteor.Collection("users");
         });
     }
 
+    // Server Routing
+    Router.map(function() {
+        this.route('serverRoute', {
+            path: '/restaurants/trending',
+            where: 'server',
+
+            action: function() {
+                var data = [],
+                    restaurants = Restaurants.find({});
+
+                restaurants.forEach(function(restaurant) {
+                    var users = getUsersForRestaurant(restaurant).map(function(user) {
+                        return user.email;
+                    });
+
+                    if (users.length > 0) {
+                        restaurant.users = users;
+                        data.push({
+                            name: restaurant.name,
+                            users: users
+                        });
+                    }
+                });
+
+                this.response.writeHead(200, {'Content-Type': 'application/json'});
+                this.response.end(JSON.stringify(data));
+            }
+        });
+    });
+
+
+    // Set Up
     if (Meteor.isServer) {
         Meteor.startup(function () {
             // code to run on server at startup
