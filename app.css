@@ -31,14 +31,14 @@
     }
 
     .main-container {
-        margin: 20px 20px 0 20px;
+        margin: 15px;
     }
     .rest {
         background-color:#fff;
-        margin-top:10px;
+        margin:10px 0.5% 0 0.5%;
         border: 2px solid rgb(209, 208, 193);
         border-radius: 5px;
-        width:46%;
+        width:48%;
         display:inline-block;
     }
     #button {
@@ -74,7 +74,9 @@
     #header span {
         color:rgb(120, 120, 120);
     }
-
+	.email{
+		margin-left:5px;
+	}
     .clear {
         clear:both;
     }
@@ -92,7 +94,7 @@
         border: 0px solid rgb(255, 181, 74);
         background-color: rgb(255, 181, 74);
         color: #fff;
-
+		margin: 10px 0 0 5px;
         text-decoration: none;
         outline: none;
     }
@@ -112,3 +114,11 @@
     .modal-dialog {
         top: 50px;
     }
+    @media only screen and (max-width:768px){
+      .rest {
+        margin:10px 1% 0 1%;
+        width:98%;
+		}
+    
+    }
+	
