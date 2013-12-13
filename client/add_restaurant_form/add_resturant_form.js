@@ -15,6 +15,7 @@ Template.addLunchSpotButtons.events({
 Template.addRestaurantForm.events({
     'keypress': function (event) {
         if(event.which == 13) { // enter key
+            event.preventDefault();
             addRestaurant(event);
         }
     }
