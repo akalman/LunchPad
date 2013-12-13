@@ -89,9 +89,16 @@ Users = new Meteor.Collection("users");
         });
     }
 
+    // Client Routing
+    Router.map(function() {
+        this.route('ui', {
+            path: '/'
+        });
+    })
+
     // Server Routing
     Router.map(function() {
-        this.route('serverRoute', {
+        this.route('get restaurants', {
             path: '/restaurants/trending',
             where: 'server',
 
@@ -117,6 +124,31 @@ Users = new Meteor.Collection("users");
                 this.response.end(JSON.stringify(data));
             }
         });
+
+        this.route('add assignment', {
+            path: 'restaurant/:id/add/:email',
+            where: 'server',
+
+            action: function() {
+                var email = this.params.email
+                if (email) {
+                    var user = Users.findOne({email: email});
+
+                    if (!user) {
+                        Users.insert({
+                            email: email,
+                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(email.toLowerCase()) + '?d=monsterid&s=40'
+                        });
+                        user = Users.findOne({email: email});
+                    }
+
+                    Assignments.insert({
+                        restaurantId: this.params.id,
+                        userId: user._id
+                    });
+                }
+            }
+        });
     });
 
 
@@ -124,6 +156,6 @@ Users = new Meteor.Collection("users");
     if (Meteor.isServer) {
         Meteor.startup(function () {
             // code to run on server at startup
-    });
+        });
     }
 })();
