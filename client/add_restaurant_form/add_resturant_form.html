@@ -8,6 +8,7 @@
           </div>
           <div class="modal-body">
             {{> addRestaurantForm}}
+            {{> addRestaurantList}}
           </div>
           <div class="modal-footer">
             {{> addLunchSpotButtons}}
@@ -31,4 +32,14 @@
 <template name="addLunchSpotButtons">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     <button type="button" class="btn btn-primary action-button">Add</button>
+</template>
+
+<template name="addRestaurantList">
+    {{#each restaurants}}
+        {{> addRestaurant}}
+    {{/each}}
+</template>
+
+<template name="addRestaurant">
+    {{name}}
 </template>
