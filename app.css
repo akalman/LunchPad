@@ -30,10 +30,6 @@
         background-image:url('square_bg.png');
     }
 
-    button:focus {
-        outline: 0;
-    }
-
     .main-container {
         margin: 20px 20px 0 20px;
     }
@@ -107,6 +103,7 @@
     padding: 5px 10px;
     text-decoration: none;
 
+    outline: none;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
