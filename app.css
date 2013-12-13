@@ -97,7 +97,7 @@
 .grav {
     margin:5px 5px 0 0;
 }
-.action-button {
+.action-button, .action-button:focus {
     border: 0px solid rgb(255, 181, 74);
     background-color: rgb(255, 181, 74);
     color: #fff;
@@ -114,6 +114,11 @@
     -o-border-radius: 10px;
     border-radius: 10px;
 }
+
+.action-button:hover {
+    background-color: #428bca;
+}
+
 a#login_pop:hover, a#join_pop:hover {
     border-color: rgb(0, 0, 0);
 }
