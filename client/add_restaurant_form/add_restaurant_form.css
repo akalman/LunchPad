@@ -1,3 +1,7 @@
+.modal-dialog .action-button {
+    margin: 0 0;
+}
+
 .add-restaurant-list li {
     list-style-type: none;
     display: none;
