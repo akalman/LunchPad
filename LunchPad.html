@@ -3,9 +3,16 @@
 </head>
 
 <body>
-{{> userInput}}
-{{> addRestaurantButton}}
-{{> restaurants}}
+  <div id="header">
+    <header>
+      <h1>Lunch Pad</h1><span> - &nbsp; What's your destination?</span>
+    </header>
+  </div>
+  <div class="main-container">
+    {{> userInput}}
+    {{> restaurants}}
+    {{> addRestaurantButton}}
+  </div>
 </body>
 
 <template name="userInput">
@@ -16,7 +23,7 @@
 </template>
 
 <template name="addRestaurantButton">
-  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addRestaurantForm">
+  <button class="btn btn-primary btn-lg action-button" data-toggle="modal" data-target="#addRestaurantForm">
     Add Lunch Spot
   </button>
 </template>
@@ -30,23 +37,23 @@
 </template>
 
 <template name="restaurant">
-  <div style="border: 1px solid black; padding: 5px 5px; margin: 2px;">
+  <div class="rest">
     <div>
       {{#each users}}
         {{> user}}
       {{/each}}
     </div>
-    <div style="width: 100%">{{name}}</div>
+    <div><h2>{{name}}</h2></div>
     {{> addToRestaurantButton}}
   </div>
 </template>
 
 <template name="addToRestaurantButton">
   <div>
-    <input type="button" value="+ Add me" />
+    <input class="action-button" type="button" value="+ Add me" />
   </div>
 </template>
 
 <template name="user">
-  <img style="float: right" src="{{gravatarUrl}}" />
+  <img class="grav" style="float: right" src="{{gravatarUrl}}" />
 </template>
