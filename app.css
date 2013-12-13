@@ -83,6 +83,7 @@
         margin:5px 5px 0 0;
         float: right;
     }
+
     .action-button, .action-button:focus {
         border: 0px solid rgb(255, 181, 74);
         background-color: rgb(255, 181, 74);
@@ -104,4 +105,8 @@
 
     .action-button:hover {
         background-color: #428bca;
+    }
+
+    .modal-dialog {
+        top: 50px;
     }
