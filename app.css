@@ -8,7 +8,7 @@
 	dl, dt, dd, ol, ul, li,
 	fieldset, form, label, legend,
 	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, figcaption, figure, 
+	article, aside, canvas, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section, summary,
 	time, mark, audio, video {
     	margin:0;
@@ -25,10 +25,15 @@
     	line-height:1;
 	}
 	/* end style reset */
-	
+
 	body {
 		background-image:url('square_bg.png');
 	}
+
+    button:focus {
+        outline: 0;
+    }
+
 	.main-container {
 		margin: 20px 20px 0 20px;
 	}
@@ -43,7 +48,7 @@
 	#button {
 		margin: 20px 20px 0 20px;
 	}
-	
+
 	h2 {
 		color: #B41900;
 		font-size:20px;
@@ -52,7 +57,7 @@
 		display:inline-block;
 		width:auto;
 	}
-	
+
 	section div {
 		margin: 10px;
 	}
@@ -69,18 +74,18 @@
 		margin:10px 10px 10px 20px;
 		display:inline-block;
 	}
-	
+
 	#header span {
 		color:rgb(120, 120, 120);
 	}
 	/* begin Clear class */
-	
+
 	.clear {
 		clear:both;
 	}
-	
+
 	/* begin Modal & Button CSS */
-	
+
 	.panel {
     background-color: #fff;
     border: 5px solid;
@@ -101,7 +106,7 @@
     float: left;
     padding: 5px 10px;
     text-decoration: none;
-    
+
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
