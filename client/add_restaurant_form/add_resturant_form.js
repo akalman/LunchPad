@@ -41,3 +41,7 @@ Template.addRestaurantList.restaurants = function () {
     return Session.get('restaurants_to_add');
 };
 
+Template.addRestaurant.rendered = function () {
+    $(this.firstNode).fadeIn();
+};
+
