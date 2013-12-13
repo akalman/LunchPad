@@ -125,6 +125,18 @@ Users = new Meteor.Collection("users");
             }
         });
 
+        this.route('get all restaurants', {
+            path: '/restaurants',
+            where: 'server',
+
+            action: function() {
+                var restaurants = Restaurants.find({}).fetch();
+
+                this.response.writeHead(200, {'Content-Type': 'application/json'});
+                this.response.end(JSON.stringify(restaurants));
+            }
+        });
+
         this.route('add assignment', {
             path: 'restaurant/:id/add/:email',
             where: 'server',
