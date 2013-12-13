@@ -4,10 +4,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Add A Lunch Spot</h4>
+            <h4 class="modal-title" id="myModalLabel">Add a Lunch Spot</h4>
           </div>
           <div class="modal-body">
             {{> addRestaurantForm}}
+            {{> addRestaurantList}}
           </div>
           <div class="modal-footer">
             {{> addLunchSpotButtons}}
@@ -22,7 +23,7 @@
       <div class="form-group">
         <label for="restaurantName" class="col-sm-2 control-label">Name</label>
         <div class="col-sm-10">
-            <input type="name" class="form-control" id="restaurantName" placeholder="McDonalds">
+            <input type="name" class="form-control" id="restaurantName" placeholder="Bernard's On Seneca" autocomplete="off">
         </div>
       </div>
     </form>
@@ -30,5 +31,21 @@
 
 <template name="addLunchSpotButtons">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Add</button>
+    <button type="button" class="btn btn-primary action-button">Add</button>
+</template>
+
+<template name="addRestaurantList">
+    <ul class="add-restaurant-list">
+    {{#each restaurants}}
+        {{> addRestaurant}}
+    {{/each}}
+    </ul>
+</template>
+
+<template name="addRestaurant">
+    <li>
+    <div class="rest">
+        <h2>{{name}}</h2>
+    </div>
+    </li>
 </template>
