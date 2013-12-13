@@ -59,7 +59,7 @@ Users = new Meteor.Collection("users");
         };
 
         Template.addToRestaurantButton.events({
-            'click input': function() {
+            'click input': function(event) {
                 if (currentUser) {
                     var user = Users.findOne({email: currentUser});
 
@@ -76,6 +76,7 @@ Users = new Meteor.Collection("users");
                         userId: user._id
                     });
                 }
+                $(event.target).blur();
             }
         });
 
