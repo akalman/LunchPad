@@ -1,0 +1,9 @@
+.add-restaurant-list li {
+    list-style-type: none;
+}
+
+.add-restaurant-list .rest {
+    width: 95%;
+    margin-left: 5%;
+
+}
