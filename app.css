@@ -1,92 +1,92 @@
-	/* begin style reset */
-	html, body, div, span, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	abbr, address, cite, code,
-	del, dfn, em, img, ins, kbd, q, samp,
-	small, strong, sub, sup, var,
-	b, i,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section, summary,
-	time, mark, audio, video {
-    	margin:0;
-		padding:0;
-		border:0;
-    	outline:0;
-    	font-size:100%;
-    	vertical-align:baseline;
-    	background:transparent;
-	}
+    /* begin style reset */
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary,
+    time, mark, audio, video {
+        margin:0;
+        padding:0;
+        border:0;
+        outline:0;
+        font-size:100%;
+        vertical-align:baseline;
+        background:transparent;
+    }
 
-	body {
-		font-family: sans-serif;
-    	line-height:1;
-	}
-	/* end style reset */
+    body {
+        font-family: sans-serif;
+        line-height:1;
+    }
+    /* end style reset */
 
-	body {
-		background-image:url('square_bg.png');
-	}
+    body {
+        background-image:url('square_bg.png');
+    }
 
     button:focus {
         outline: 0;
     }
 
-	.main-container {
-		margin: 20px 20px 0 20px;
-	}
-	.rest {
-		background-color:#fff;
-		margin-top:10px;
-		border: 2px solid rgb(209, 208, 193);
-		border-radius: 5px;
-		width:46%;
-		display:inline-block;
-	}
-	#button {
-		margin: 20px 20px 0 20px;
-	}
+    .main-container {
+        margin: 20px 20px 0 20px;
+    }
+    .rest {
+        background-color:#fff;
+        margin-top:10px;
+        border: 2px solid rgb(209, 208, 193);
+        border-radius: 5px;
+        width:46%;
+        display:inline-block;
+    }
+    #button {
+        margin: 20px 20px 0 20px;
+    }
 
-	h2 {
-		color: #B41900;
-		font-size:20px;
-		/*text-shadow: 1px 1px rgb(255, 195, 95);
-		*/margin:10px;
-		display:inline-block;
-		width:auto;
-	}
+    h2 {
+        color: #B41900;
+        font-size:20px;
+        /*text-shadow: 1px 1px rgb(255, 195, 95);
+        */margin:10px;
+        display:inline-block;
+        width:auto;
+    }
 
-	section div {
-		margin: 10px;
-	}
-	#header {
-		background-color:#fff;
-		margin-top: 20px;
-		border-top: 2px solid rgb(209, 208, 193);
-		border-bottom: 2px solid rgb(209, 208, 193);		width:100%;
-	}
+    section div {
+        margin: 10px;
+    }
+    #header {
+        background-color:#fff;
+        margin-top: 20px;
+        border-top: 2px solid rgb(209, 208, 193);
+        border-bottom: 2px solid rgb(209, 208, 193);        width:100%;
+    }
 
-	#header h1{
-		color: #894035;
-		font-size:24px;
-		margin:10px 10px 10px 20px;
-		display:inline-block;
-	}
+    #header h1{
+        color: #894035;
+        font-size:24px;
+        margin:10px 10px 10px 20px;
+        display:inline-block;
+    }
 
-	#header span {
-		color:rgb(120, 120, 120);
-	}
-	/* begin Clear class */
+    #header span {
+        color:rgb(120, 120, 120);
+    }
+    /* begin Clear class */
 
-	.clear {
-		clear:both;
-	}
+    .clear {
+        clear:both;
+    }
 
-	/* begin Modal & Button CSS */
+    /* begin Modal & Button CSS */
 
-	.panel {
+    .panel {
     background-color: #fff;
     border: 5px solid;
     border-color: rgb(255, 181, 74);
@@ -95,14 +95,14 @@
 }
 
 .grav {
-	margin:5px 5px 0 0;
+    margin:5px 5px 0 0;
 }
 .action-button {
     border: 0px solid rgb(255, 181, 74);
     background-color: rgb(255, 181, 74);
     color: #fff;
     margin:5px;
-	display: block;
+    display: block;
     float: left;
     padding: 5px 10px;
     text-decoration: none;
@@ -230,4 +230,4 @@ a#login_pop:hover, a#join_pop:hover {
 .popup input[type="text"]:hover, .popup input[type="password"]:hover {
     border-color: #555 #888 #888;
 }
-	/* End Modal & Button CSS */
+    /* End Modal & Button CSS */
