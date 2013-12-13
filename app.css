@@ -74,37 +74,34 @@
     #header span {
         color:rgb(120, 120, 120);
     }
-    /* begin Clear class */
 
     .clear {
         clear:both;
     }
-}
 
-.grav {
-    margin:5px 5px 0 0;
-}
-.action-button, .action-button:focus {
-    border: 0px solid rgb(255, 181, 74);
-    background-color: rgb(255, 181, 74);
-    color: #fff;
-    margin:5px;
-    display: block;
-    float: left;
-    padding: 5px 10px;
-    text-decoration: none;
+    .grav {
+        margin:5px 5px 0 0;
+        float: right;
+    }
+    .action-button, .action-button:focus {
+        border: 0px solid rgb(255, 181, 74);
+        background-color: rgb(255, 181, 74);
+        color: #fff;
+        margin:5px;
+        display: block;
+        float: left;
+        padding: 5px 10px;
+        text-decoration: none;
 
-    outline: none;
+        outline: none;
 
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-}
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+    }
 
-.action-button:hover {
-    background-color: #428bca;
-}
-
-    /* End Modal & Button CSS */
+    .action-button:hover {
+        background-color: #428bca;
+    }
