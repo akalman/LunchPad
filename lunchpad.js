@@ -40,23 +40,6 @@ Assignments = new Meteor.Collection("assignments");
             });
         };
 
-        Template.restaurant.users = function() {
-            return getUsersForRestaurant(this);
-        };
-
-        Template.addToRestaurantButton.events({
-            'click button': function(event) {
-                var user = Meteor.user();
-
-                if (user) {
-                    Assignments.insert({
-                        restaurantId: this._id,
-                        userId: user._id
-                    });
-                }
-            }
-        });
-
         Template.addRestaurantButton.events({
             'click button.btn-primary': function (event) {
                 $('#addRestaurantForm').modal('show');
