@@ -16,10 +16,7 @@
 </body>
 
 <template name="userInput">
-  <div class="email">
-    Email
-    <input type="email" value="{{user}}" />
-  </div>
+  {{loginButtons}}
 </template>
 
 <template name="addRestaurantButton">
@@ -44,7 +41,9 @@
       {{/each}}
     </div>
     <div><h2>{{name}}</h2></div>
-    {{> addToRestaurantButton}}
+    {{#if currentUser}}
+      {{> addToRestaurantButton}}
+    {{/if}}
   </div>
 </template>
 

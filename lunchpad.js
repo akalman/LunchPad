@@ -1,7 +1,5 @@
-
 Restaurants = new Meteor.Collection("restaurants");
 Assignments = new Meteor.Collection("assignments");
-Users = new Meteor.Collection("users");
 
 (function() {
     // Helper Data
@@ -10,7 +8,7 @@ Users = new Meteor.Collection("users");
             restaurantId: restaurant._id
         });
 
-        return Users.find({
+        return Meteor.users.find({
             _id: {$in: assignments.map(function(assignment) {
                 return assignment.userId;
             })}
@@ -29,21 +27,9 @@ Users = new Meteor.Collection("users");
         });
     }
 
-    var currentUser;
-
 
     // UI Plugs
     if (Meteor.isClient) {
-        Template.userInput.user = function() {
-            return currentUser;
-        };
-
-        Template.userInput.events({
-            'change input': function(event) {
-                currentUser = event.target.value;
-            }
-        });
-
         Template.restaurants.restaurants = function() {
             var restaurants = Restaurants.find({}, {
                 sort: []
@@ -60,17 +46,9 @@ Users = new Meteor.Collection("users");
 
         Template.addToRestaurantButton.events({
             'click button': function(event) {
-                if (currentUser) {
-                    var user = Users.findOne({email: currentUser});
+                var user = Meteor.user();
 
-                    if (!user) {
-                        Users.insert({
-                            email: currentUser,
-                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(currentUser.toLowerCase()) + '?d=monsterid&s=40'
-                        });
-                        user = Users.findOne({email: currentUser});
-                    }
-
+                if (user) {
                     Assignments.insert({
                         restaurantId: this._id,
                         userId: user._id
@@ -144,14 +122,11 @@ Users = new Meteor.Collection("users");
             action: function() {
                 var email = this.params.email
                 if (email) {
-                    var user = Users.findOne({email: email});
+                    var user = Meteor.users.findOne({email: email});
 
                     if (!user) {
-                        Users.insert({
-                            email: email,
-                            gravatarUrl: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(email.toLowerCase()) + '?d=monsterid&s=40'
-                        });
-                        user = Users.findOne({email: email});
+                        this.response.writeHead(403, {'Content-Type': 'application/json'});
+                        this.response.end();
                     }
 
                     Assignments.insert({
@@ -169,5 +144,7 @@ Users = new Meteor.Collection("users");
         Meteor.startup(function () {
             // code to run on server at startup
         });
+
     }
+
 })();
